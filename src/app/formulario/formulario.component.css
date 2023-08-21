@@ -3,7 +3,7 @@
 .perfil-info {
     margin-bottom: 20px; /* Espaciado entre el perfil y el título de sesgos */
     font-size: 0.8rem;
-    font-family: 'Montserrat', sans-serif;
+    
   }
   
   .sesgos-title {
@@ -18,7 +18,12 @@
 
   .sesgo-description{
     font-size: 0.8rem;
-    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+  }
+
+  .sesgo-sesgo{
+    font-size: 0.8rem;
+    font-weight: normal;
   }
 
   .custom-modal {

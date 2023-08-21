@@ -5,8 +5,9 @@ body {
     background-repeat: no-repeat; /* Evita la repetición */
     background-attachment: fixed; /* Fija el fondo al viewport */
     background-size: cover; /* Cubre todo el viewport */
-    font-family: Arial, sans-serif; /* Fuente de texto */
+    font-family: Arial; /* Fuente de texto */
     color: #ffffff; /* Color de texto blanco */
+    font-weight: normal;
   }
   
     

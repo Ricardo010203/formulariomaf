@@ -19,7 +19,7 @@
                 <label for="edad">Edad:</label>
                 <input type="number" id="edad" formControlName="edad" class="form-control">
                 <div *ngIf="formulario.controls['edad'].invalid && formulario.controls['edad'].touched" class="text-danger">
-                  La edad es requerida y debe ser mayor o igual a 1.
+                  La edad es requerida y debe ser mayor o igual a 18.
                 </div>
               </div>
               <div class="form-group">
@@ -91,6 +91,7 @@
                     <option value="" disabled selected>Seleccione un estado civil</option>
                     <option value="soltero">Soltero</option>
                     <option value="casado">Casado</option>
+                    <option value="UnionLibre">Unión libre</option>
                     <option value="divorciado">Divorciado</option>
                     <option value="viudo">Viudo</option>
                   </select>
@@ -232,32 +233,34 @@
             <div class="perfil-info mt-3">{{ perfilActual.perfil }}</div>
           </div>
           <div class="d-flex justify-content-center mt-4">
-            <div class="d-flex align-items-center ml-5 mb-3">
+            <div class="d-flex align-items-center ml-md-5 mb-3">
               <div class="circulo-cuidadoso circulo-grande" [ngClass]="{ 'perfil-activo': perfil === 'Conservador' }">
                 <span class="chulo"></span>
               </div>
               <h6 class="perfil-title ml-2">Cuidadoso</h6>
             </div>
-            <div class="d-flex align-items-center ml-5 mb-3">
+            <div class="d-flex align-items-center ml-md-5 mb-3">
               <div class="circulo-explorador circulo-grande"[ngClass]="{ 'perfil-activo': perfil === 'Moderado' }">
                 <span class="chulo"></span>
               </div>
               <h6 class="perfil-title ml-2">Explorador</h6>
-            </div>
-            <div class="d-flex align-items-center ml-5 mb-3">
+            </div>            
+            <div class="d-flex align-items-center ml-md-5 mb-3">
               <div class="circulo-versatil circulo-grande"[ngClass]="{ 'perfil-activo': perfil === 'Moderado-Agresivo' }">
                 <span class="chulo"></span>
               </div>
               <h6 class="perfil-title ml-2">Versátil</h6>
             </div>
-            <div class="d-flex align-items-center ml-5 mb-3">
+            <div class="d-flex align-items-center ml-md-5 mb-3">
               <div class="circulo-competitivo circulo-grande"[ngClass]="{ 'perfil-activo': perfil === 'Arriesgado' }">
                 <span class="chulo"></span>
               </div>
               <h6 class="perfil-title ml-2">Competitivo</h6>
             </div>
           </div>
-          <div class="color-bar"></div>
+          <div class="container">
+            <div class="color-bar"></div>
+          </div>
           <div class="mt-2">
             <button class="btn text-light btn-lg float-end"
             style="background-color: rgb(0, 119, 255);"
@@ -288,7 +291,7 @@
                     <p class="sesgo-description" *ngIf="sesgo.mostrar && sesgoSeleccionadoIndex === i">
                       <span class="oval">{{ sesgo.asociado }}</span>
                       <br>
-                      <span class="mt-2 " [innerHTML]="sesgo.sesgo"></span>
+                      <span class="mt-2 sesgo-sesgo" [innerHTML]="sesgo.sesgo"></span>
                     </p>
                   </div>                         
                 </div>
