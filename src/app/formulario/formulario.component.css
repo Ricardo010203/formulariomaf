@@ -212,6 +212,85 @@
   margin-left: 20px;
 }
 
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .circulo-competitivo,
+  .circulo-grande {
+    width: 20px; /* Tamaño más grande del círculo */
+    height: 20px; /* Tamaño más grande del círculo */
+    margin-right: 5px;
+    margin-left: 10px;
+  }
+}
+
+/* Estilos para pantallas aún más pequeñas */
+@media (max-width: 480px) {
+  .circulo-competitivo,
+  .circulo-grande {
+    width: 10px; /* Tamaño más grande del círculo */
+    height: 10px; /* Tamaño más grande del círculo */
+    margin-right: 2px;
+    margin-left: 5px;
+  }
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .circulo-explorador,
+  .circulo-grande {
+    margin-right: 5px;
+    margin-left: 10px;
+  }
+}
+
+/* Estilos para pantallas aún más pequeñas */
+@media (max-width: 480px) {
+  .circulo-explorador,
+  .circulo-grande {
+    margin-right: 2px;
+    margin-left: 5px;
+  }
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .circulo-cuidadose,
+  .circulo-grande {
+    margin-right: 5px;
+    margin-left: 10px;
+  }
+}
+
+/* Estilos para pantallas aún más pequeñas */
+@media (max-width: 480px) {
+  .circulo-cuidadose,
+  .circulo-grande {
+    margin-right: 2px;
+    margin-left: 5px;
+  }
+}
+
+.video {
+  width: 700px; /* Agrega "px" para especificar píxeles */
+  height: 400px; /* Agrega "px" para especificar píxeles */
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .video {
+    width: 500px; /* Agrega "px" para especificar píxeles */
+    height: 300px; /* Agrega "px" para especificar píxeles */
+  }
+}
+
+/* Estilos para pantallas aún más pequeñas */
+@media (max-width: 480px) {
+  .video {
+    width: 300px; /* Agrega "px" para especificar píxeles */
+    height: 150px; /* Agrega "px" para especificar píxeles */
+  }
+}
+
 .chulo {
   position: absolute;
   top: 50%; /* Alinea el chulo verticalmente en el centro */
@@ -222,6 +301,36 @@
   background-color: #000000; /* Color del chulo */
   clip-path: polygon(0% 60%, 40% 100%, 100% 0%, 80% 0%, 40% 80%, 20% 50%); /* Forma del chulo */
   display: none; /* Por defecto, el chulo está oculto */
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .chulo {
+    position: absolute;
+    top: 50%; /* Alinea el chulo verticalmente en el centro */
+    left: 50%; /* Alinea el chulo horizontalmente en el centro */
+    transform: translate(-50%, -50%); /* Centra el chulo */
+    width: 10px; /* Ancho del chulo */
+    height: 10px; /* Alto del chulo */
+    background-color: #000000; /* Color del chulo */
+    clip-path: polygon(0% 60%, 40% 100%, 100% 0%, 80% 0%, 40% 80%, 20% 50%); /* Forma del chulo */
+    display: none; /* Por defecto, el chulo está oculto */
+  }
+}
+
+/* Estilos para pantallas aún más pequeñas */
+@media (max-width: 480px) {
+  .chulo {
+    position: absolute;
+    top: 50%; /* Alinea el chulo verticalmente en el centro */
+    left: 50%; /* Alinea el chulo horizontalmente en el centro */
+    transform: translate(-50%, -50%); /* Centra el chulo */
+    width: 5px; /* Ancho del chulo */
+    height: 5px; /* Alto del chulo */
+    background-color: #000000; /* Color del chulo */
+    clip-path: polygon(0% 60%, 40% 100%, 100% 0%, 80% 0%, 40% 80%, 20% 50%); /* Forma del chulo */
+    display: none; /* Por defecto, el chulo está oculto */
+  }
 }
 
 .perfil-activo .chulo {
