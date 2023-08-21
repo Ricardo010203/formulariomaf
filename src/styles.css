@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background: #2c3e50;  /* Fallback para navegadores antiguos */
+    background: linear-gradient(to bottom, #2c3e50, #2d709c); /* Degradado de azul oscuro a azul claro */
+    background-repeat: no-repeat; /* Evita la repetición */
+    background-attachment: fixed; /* Fija el fondo al viewport */
+    background-size: cover; /* Cubre todo el viewport */
+    font-family: Arial, sans-serif; /* Fuente de texto */
+    color: #ffffff; /* Color de texto blanco */
+  }
+  
+    
+  
+
+.titulo {
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* .label {
+    font-size: 1.0rem;
+    font-family: 'Montserrat';
+} */

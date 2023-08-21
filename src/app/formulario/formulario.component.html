@@ -1,0 +1,307 @@
+<div *ngIf="!preguntasInicialesAceptadas" class="modal fade show d-block custom-modal">
+  <div class="modal-dialog custom-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Encuesta perfil inversionista</h5>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formulario" class="formulario">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" formControlName="nombre" class="form-control">
+                <div *ngIf="formulario.controls['nombre'].invalid && formulario.controls['nombre'].touched" class="text-danger">
+                  El nombre es requerido.
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" formControlName="edad" class="form-control">
+                <div *ngIf="formulario.controls['edad'].invalid && formulario.controls['edad'].touched" class="text-danger">
+                  La edad es requerida y debe ser mayor o igual a 1.
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="sexoUsuario">Sexo:</label>
+                <select id="sexoUsuario" formControlName="sexo" class="form-control">
+                  <option value="" disabled selected>Seleccione su sexo</option>
+                  <option value="masculino">Masculino</option>
+                  <option value="femenino">Femenino</option>
+                  <option value="femenino">Otro</option>
+                </select>
+                <div *ngIf="formulario.controls['sexo'].invalid && formulario.controls['sexo'].touched" class="text-danger">
+                  El sexo es requerido.
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="encuestaAnterior">¿Ha realizado encuestas anteriormente para determinar su perfil?</label>
+                <select id="encuestaAnterior" formControlName="encuestaAnterior" class="form-control">
+                  <option value="" disabled selected>Seleccione una opción</option>
+                  <option value="si">Sí</option>
+                  <option value="no">No</option>
+                </select>
+                <div *ngIf="formulario.controls['encuestaAnterior'].invalid && formulario.controls['encuestaAnterior'].touched" class="text-danger">
+                  La respuesta es requerida.
+                </div>
+              </div>
+              <div class="form-group" *ngIf="formulario.value.encuestaAnterior === 'si'">
+                <label for="perfilAnterior">¿Cuál fue su perfil obtenido en la encuesta anterior?</label>
+                <select id="perfilAnterior" formControlName="perfilAnterior" class="form-control">
+                  <option value="" disabled selected>Seleccione una opción</option>
+                  <option value="conservador">Conservador</option>
+                  <option value="moderado">Moderado</option>
+                  <option value="arriesgado">Arriesgado</option>
+                </select>
+                <div *ngIf="formulario.controls['perfilAnterior'].invalid && formulario.controls['perfilAnterior'].touched" class="text-danger">
+                  La respuesta es requerida.
+                </div>
+              </div>
+              <div class="form-group" *ngIf="formulario.value.encuestaAnterior === 'no'">
+                <label for="perfilAnterior">¿Cuál perfil cree que se adapta mejor para usted?</label>
+                <select id="perfilAnterior" formControlName="perfilAnterior" class="form-control">
+                  <option value="" disabled selected>Seleccione una opción</option>
+                  <option value="conservador">Conservador</option>
+                  <option value="moderado">Moderado</option>
+                  <option value="arriesgado">Arriesgado</option>
+                </select>
+                <div *ngIf="formulario.controls['perfilAnterior'].invalid && formulario.controls['perfilAnterior'].touched" class="text-danger">
+                  La respuesta es requerida.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="nivelAcademico">Nivel Académico:</label>
+                <select id="nivelAcademico" formControlName="nivelAcademico" class="form-control">
+                  <option value="" disabled selected>Seleccione su nivel académico</option>
+                  <option value="primaria">Educación primaria</option>
+                  <option value="bachiller">Educación bachiller</option>
+                  <option value="profesional">Profesional</option>
+                  <option value="posgrado">Posgrado</option>
+                </select>
+                <div *ngIf="formulario.controls['nivelAcademico'].invalid && formulario.controls['nivelAcademico'].touched" class="text-danger">
+                  El nivel académico es requerido.
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="estadoCivil">Estado Civil:</label>
+                  <select id="estadoCivil" formControlName="estadoCivil" class="form-control">
+                    <option value="" disabled selected>Seleccione un estado civil</option>
+                    <option value="soltero">Soltero</option>
+                    <option value="casado">Casado</option>
+                    <option value="divorciado">Divorciado</option>
+                    <option value="viudo">Viudo</option>
+                  </select>
+                  <div *ngIf="formulario.controls['estadoCivil'].invalid && formulario.controls['estadoCivil'].touched" class="text-danger">
+                    El estado civil es requerido.
+                  </div>
+                </div>
+              </div>  
+              <div class="form-group">
+                <label title="Autorización de tratamiento de datos, la información sumistrada en la siguiente encuesta tiene como propósito poder identificar su perfil de riesgo como inversionista. Los datos como su nombre serán utilizados para mejorar y personalizar su experiencia en el desarrollo de la encuesta. La información de su edad, sexo, nivel de escolaridad serán utilizados para realizar análisis con fines académicos.">
+                  <input type="checkbox" formControlName="aceptaTratamientoDatos">
+                  ¿Acepta el tratamiento de datos personales?
+                </label>
+                <div *ngIf="formulario.controls['aceptaTratamientoDatos'].invalid && formulario.controls['aceptaTratamientoDatos'].touched" class="text-danger">
+                  Debe aceptar el tratamiento de datos para continuar.
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn text-light btn-lg" style="background-color: rgb(0, 119, 255);" (click)="verificarAutorizacion()" [disabled]="!preguntasInicialesCompletas()">Continuar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="preguntaActual" class="container mt-5">
+  <div class="row">
+    <div class="col-lg-10 offset-lg-1 mt-3">
+      <div class="card">
+        <ul class="nav nav-pills justify-content-center mb-3">
+            <li class="nav-item" *ngFor="let pregunta of preguntas; let i = index">
+              <a class="nav-link custom-active-link" [ngClass]="{'active': i === preguntaActualIndex}">
+                {{ i + 1 }}
+              </a>
+            </li>          
+        </ul>
+        <div class="progress col-lg-9 offset-lg-1 mt-4">
+          <div class="progress-bar bg-success" role="progressbar" [style.width.%]="progressPercentage"></div>
+        </div>
+        <div class="card-body text-center">
+          <h5 class="titulo">{{ preguntaActual.pregunta }}</h5>
+          <div class="container">
+            <div class="container">
+              <div class="row">
+                  <div class="col-12 separador"></div>
+                  <ng-container *ngIf="preguntaActual.opciones; else respuestaInput">
+                    <div *ngFor="let opcion of preguntaActual.opciones; let j = index" class="opcion-container">
+                      <label>
+                        <input type="radio" [(ngModel)]="preguntaActual.respuesta.respuesta" [value]="opcion.respuesta">
+                        {{ opcion.respuesta }}
+                      </label>
+                    </div>
+                </ng-container>
+                <ng-template #respuestaInput>
+                  <h5>{{ preguntaActual.pregunta }}</h5>
+                  <img src="ruta-a-la-imagen.png" alt="Imagen de referencia" class="imagen-pregunta" style="margin-bottom: 14px;">
+                  <input [(ngModel)]="preguntaActual.respuesta.respuesta">
+                </ng-template>
+                <div class="mb-3">
+                  <button class="btn text-light btn-lg float-end"
+                          style="background-color: rgb(0, 119, 255);"
+                          (click)="siguientePregunta(preguntaActual.respuesta.respuesta)"
+                          [disabled]="!preguntaActual.respuesta.respuesta">
+                    Siguiente
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!preguntaActual  && !observoVideo" class="container mt-5">
+  <div class="row">
+    <div class="col-lg-10 offset-lg-1 mt-3">
+      <div class="card">
+        <div class="card-body text-center">
+          <h5 class="titulo">¡Tu perfil es {{perfilUsuario}}!</h5>
+          <div class="container">
+            <div class="container">
+              <div class="row">
+                <div class="modal-body">
+                  <div *ngIf="perfil === 'Conservador'">
+                    <video controls autoplay width="700" height="400">
+                      <source src="assets/cuidadoso.mp4" type="video/mp4">
+                      Tu navegador no admite el elemento de video.
+                    </video>
+                  </div>
+                  
+                  <div *ngIf="perfil === 'Moderado'">
+                    <video controls autoplay width="700" height="400">
+                      <source src="assets/explorador.mp4" type="video/mp4">
+                      Tu navegador no admite el elemento de video.
+                    </video>
+                  </div>
+
+                  <div *ngIf="perfil === 'Moderado-Agresivo'">
+                    <video controls autoplay width="700" height="400">
+                      <source src="assets/versatil.mp4" type="video/mp4">
+                      Tu navegador no admite el elemento de video.
+                    </video>
+                  </div>
+                  
+                  <div *ngIf="perfil === 'Arriesgado'">
+                    <video controls autoplay width="700" height="400">
+                      <source src="assets/competitivo.mp4" type="video/mp4">
+                      Tu navegador no admite el elemento de video.
+                    </video>
+                  </div>
+                  <button class="btn text-light btn-lg float-end"
+                    style="background-color: rgb(0, 119, 255);"
+                    (click)="mostrarPerfil()">
+                    Siguiente
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="!preguntaActual && preguntasInicialesAceptadas && observoVideo && muestraPerfil" class="container mt-5">
+  <div class="row">
+    <div class="col-lg-10 offset-lg-1 mt-3">
+      <div class="card">
+        <div class="card-body text-center">
+          <div class="d-flex flex-column align-items-center">
+            <h5 class="titulo">¡Tu perfil es {{perfilUsuario}}!</h5>
+            <div class="perfil-info mt-3">{{ perfilActual.perfil }}</div>
+          </div>
+          <div class="d-flex justify-content-center mt-4">
+            <div class="d-flex align-items-center ml-5 mb-3">
+              <div class="circulo-cuidadoso circulo-grande" [ngClass]="{ 'perfil-activo': perfil === 'Conservador' }">
+                <span class="chulo"></span>
+              </div>
+              <h6 class="perfil-title ml-2">Cuidadoso</h6>
+            </div>
+            <div class="d-flex align-items-center ml-5 mb-3">
+              <div class="circulo-explorador circulo-grande"[ngClass]="{ 'perfil-activo': perfil === 'Moderado' }">
+                <span class="chulo"></span>
+              </div>
+              <h6 class="perfil-title ml-2">Explorador</h6>
+            </div>
+            <div class="d-flex align-items-center ml-5 mb-3">
+              <div class="circulo-versatil circulo-grande"[ngClass]="{ 'perfil-activo': perfil === 'Moderado-Agresivo' }">
+                <span class="chulo"></span>
+              </div>
+              <h6 class="perfil-title ml-2">Versátil</h6>
+            </div>
+            <div class="d-flex align-items-center ml-5 mb-3">
+              <div class="circulo-competitivo circulo-grande"[ngClass]="{ 'perfil-activo': perfil === 'Arriesgado' }">
+                <span class="chulo"></span>
+              </div>
+              <h6 class="perfil-title ml-2">Competitivo</h6>
+            </div>
+          </div>
+          <div class="color-bar"></div>
+          <div class="mt-2">
+            <button class="btn text-light btn-lg float-end"
+            style="background-color: rgb(0, 119, 255);"
+            (click)="mostrarSesgos()">
+            Siguiente
+          </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="muestraSesgos" class="container mt-5">
+  <div class="row">
+    <div class="col-lg-10 offset-lg-1 mt-3">
+      <div class="card">
+        <div class="card-body text-center">
+          <h5 class="titulo">Posibles Sesgos Asociados</h5>
+          <div class="container">
+            <div class="row">
+              <div class="modal-body">
+                <div class="sesgos-container mt-4">
+                  <div class="sesgo-item" *ngFor="let sesgo of perfilActual.sesgos; let i = index">
+                    <button class="btn btn-continuar" (click)="mostrarSesgo(sesgo, i)">{{ sesgo.asociado }}</button>
+                  </div>
+                  <div class="sesgo-item" *ngFor="let sesgo of perfilActual.sesgos; let i = index">
+                    <p class="sesgo-description" *ngIf="sesgo.mostrar && sesgoSeleccionadoIndex === i">
+                      <span class="oval">{{ sesgo.asociado }}</span>
+                      <br>
+                      <span class="mt-2 " [innerHTML]="sesgo.sesgo"></span>
+                    </p>
+                  </div>                         
+                </div>
+                <footer class="footer">
+                  <p class="footer-text mt-4">
+                    Es importante tener en cuenta que estos sesgos pueden manifestarse de diferentes maneras en cada perfil de inversión y que los inversores pueden presentar una combinación de sesgos de diferentes perfiles según sus características y experiencias personales. Además, la clasificación puede variar según la situación y contexto específico de la toma de decisiones financieras.
+                  </p>
+                </footer>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

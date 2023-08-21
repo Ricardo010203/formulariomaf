@@ -1,0 +1,247 @@
+/* Agrega estos estilos a tu archivo CSS */
+
+.perfil-info {
+    margin-bottom: 20px; /* Espaciado entre el perfil y el título de sesgos */
+    font-size: 0.8rem;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .sesgos-title {
+    margin-top: 20px; /* Espaciado entre el título de sesgos y los botones */
+  }
+  
+  .sesgos-container {
+    display: flex; /* Para mostrar los sesgos en una línea horizontal */
+    flex-wrap: wrap; /* Envolver los elementos cuando no quepan en una línea */
+    gap: 10px; /* Espaciado entre los botones de sesgos */
+  }
+
+  .sesgo-description{
+    font-size: 0.8rem;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .custom-modal {
+    position: fixed; /* Fijar la posición para evitar cubrir el fondo */
+    top: 50%; /* Centrar verticalmente */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translate(-50%, -50%); /* Centrar exactamente */
+  }
+
+  .oval {
+    display: inline-block;
+    background-color: green;
+    border-radius: 50%; /* Aplica un borde redondeado para crear un ovalo */
+    padding: 20px; /* Ajusta el espaciado interior */
+    text-align: center; /* Centra el contenido horizontalmente */
+    color: white; /* Color del texto */
+    font-size: 24px; /* Tamaño de fuente */
+    align-items: center;
+  }
+  
+  .custom-dialog {
+    max-width: 80%; /* Ajustar el ancho del modal según tus necesidades */
+    width: auto; /* Ancho automático */
+  }
+
+  .custom-active-link.active {
+    background-color: #198754;
+    color: white; /* Cambia el color del texto si es necesario */
+  }
+
+  .opcion-container {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      background-color: #bddbfa;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .opcion-container:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .separador {
+    border-top: 1px solid #ccc;
+    margin: 20px auto;
+  }
+
+  /* Estilos para el fondo del modal y el contenedor del formulario */
+.custom-modal {
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+}
+
+.custom-dialog {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el título del modal */
+.modal-title {
+  color: #333;
+}
+
+/* Estilos para los campos del formulario */
+.form-group label {
+  font-weight: bold;
+  color: #555;
+}
+
+/* Estilos para los campos de entrada */
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Estilos para los mensajes de error */
+.text-danger {
+  color: #ff6347; /* Color rojo */
+}
+
+/* Estilos para los botones */
+
+.btn {
+  border-radius: 5px;
+  margin: 5px;
+}
+
+/* Estilos para el botón de Continuar */
+.btn-continuar {
+  background-color: #0077ff; /* Azul */
+  color: white;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-continuar:hover {
+  background-color: #005cbf; /* Azul más oscuro */
+}
+
+.footer-text {
+  font-size: 12px; /* Puedes ajustar el tamaño de fuente según tus preferencias */
+}
+
+
+/* Estilos para la contenedor de sesgos */
+.sesgos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos para las descripciones de sesgos */
+.sesgo-description {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Estilos para el checkbox */
+.form-group label input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/* Estilos para el fondo del footer del modal */
+.modal-footer {
+  background-color: #f7f7f7; /* Gris claro */
+}
+
+.circulo-explorador {
+  width: 20px; /* Aumento del tamaño del círculo */
+  height: 20px; /* Aumento del tamaño del círculo */
+  border-radius: 50%;
+  background-color: #e5ff00; /* Color del círculo */
+  margin-right: 10px; /* Espacio entre el círculo y el título */
+  margin-left: 20px;
+  position: relative;
+}
+
+.circulo-cuidadoso {
+  width: 20px; /* Aumento del tamaño del círculo */
+  height: 20px; /* Aumento del tamaño del círculo */
+  border-radius: 50%;
+  background-color: #1eff00; /* Color del círculo */
+  margin-right: 10px; /* Espacio entre el círculo y el título */
+  margin-left: 20px;
+  position: relative;
+}
+
+.circulo-versatil {
+  width: 20px; /* Aumento del tamaño del círculo */
+  height: 20px; /* Aumento del tamaño del círculo */
+  border-radius: 50%;
+  background-color: #ff9100; /* Color del círculo */
+  margin-right: 10px; /* Espacio entre el círculo y el título */
+  margin-left: 20px;
+  position: relative;
+}
+
+.circulo-competitivo {
+  width: 20px; /* Aumento del tamaño del círculo */
+  height: 20px; /* Aumento del tamaño del círculo */
+  border-radius: 50%;
+  background-color: #ff2600; /* Color del círculo */
+  margin-right: 10px; /* Espacio entre el círculo y el título */
+  margin-left: 20px;
+  position: relative;
+}
+
+.color-bar {
+  height: 8px; /* Altura de la barra de color */
+  width: 100%; /* Ancho de la barra de color */
+  background: linear-gradient(to right, #1eff00, #e5ff00, #ff9100, #ff2600); /* Degradado de colores */
+  margin-top: 20px; /* Espacio entre los círculos y la barra de color */
+}
+
+.circulo-grande {
+  width: 30px; /* Tamaño más grande del círculo */
+  height: 30px; /* Tamaño más grande del círculo */
+  margin-right: 10px; /* Espacio mayor entre el círculo y el título */
+  margin-left: 20px;
+}
+
+.chulo {
+  position: absolute;
+  top: 50%; /* Alinea el chulo verticalmente en el centro */
+  left: 50%; /* Alinea el chulo horizontalmente en el centro */
+  transform: translate(-50%, -50%); /* Centra el chulo */
+  width: 20px; /* Ancho del chulo */
+  height: 20px; /* Alto del chulo */
+  background-color: #000000; /* Color del chulo */
+  clip-path: polygon(0% 60%, 40% 100%, 100% 0%, 80% 0%, 40% 80%, 20% 50%); /* Forma del chulo */
+  display: none; /* Por defecto, el chulo está oculto */
+}
+
+.perfil-activo .chulo {
+  display: block; /* Muestra el chulo si el perfil está activo */
+}
+
+.mb-3 {
+  margin-bottom: 15px; /* Espacio entre los grupos de círculos y títulos */
+}
+
+
+
+
+
+
+
+
+  
+  
+
+/*   .progress {
+    max-width: 80%;
+    margin: 0 auto; 
+  }
+  
+  .progress .progress-bar {
+    background-color: green; 
+  } */
