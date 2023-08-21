@@ -177,59 +177,6 @@ obtenerPerfil(nombre: string): any[] {
     },
 ];}
 
-/*async sendDataToGoogleSheet() {
-
-  console.log
-    /*try {
-      const auth = new google.auth.GoogleAuth({
-        credentials: googleSheetsCredentials,
-        scopes: ['https://www.googleapis.com/auth/spreadsheets'],
-      });*/
-  
-  /*    const sheets = google.sheets('v4');
-      //const spreadsheetId = '1ZUZ9sfi1YRuHpZOT9-WT9dV_M2ldfPkRyp7IJMUy-r0';
-      const spreadsheetId = '1tV58GQA8i96JUxSsjm0mIAqofT0fzPVi4NRv80NcTNY';
-      const range = 'A:A'; // Columna A
-      const response = await sheets.spreadsheets.values.get({
-        auth,
-        spreadsheetId,
-        range,
-      });
-  
-      const values = response.data.values;
-  
-      if (values && values.length > 0) {
-        
-        const newRow = ['juan','si']; 
-        const request = {
-          auth,
-          spreadsheetId,
-          range: `A${values.length + 1}`, // Siguiente fila disponible
-          valueInputOption: 'RAW',
-          resource: { values: [newRow] },
-        };
-  
-        await sheets.spreadsheets.values.append(request);
-  
-        console.log({ message: 'Dato agregado con éxito' });
-      } else {
-        console.log({ message: 'No hay datos en la columna A' });
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      console.log({ error: 'Internal Server Error' });
-    } 
-} */
-
-/* async sendData() {
-  const dataArray = [
-    // Tu arreglo de datos aquí
-    ['John', 30],
-    ['Jane', 25],
-  ];
-
-  await this.googleSheetsService.appendData(dataArray);
-} */
 
   puntajeTotal: number = 0;
 
@@ -238,7 +185,7 @@ obtenerPerfil(nombre: string): any[] {
 
   preguntasInicialesAceptadas: boolean = false;
   preguntasInicialesMostradas: boolean = false;
-  observoVideo: boolean = false;
+  observoVideo: boolean = true;
   muestraPerfil: boolean = false;
   muestraSesgos: boolean = false;
 
@@ -313,6 +260,7 @@ obtenerPerfil(nombre: string): any[] {
     console.log(this.preguntaActualIndex);
     if(this.preguntaActualIndex == 7){
 
+      this.observoVideo = false;
       this.enviarDatosSheet();
       //this.sendData();
 
