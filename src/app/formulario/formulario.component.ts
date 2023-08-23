@@ -56,6 +56,15 @@ export class FormularioComponent implements OnInit {
         console.error('Error al enviar arreglo:', error);
       }
     );
+
+    this.googleSheetsService.enviarDatosCopia(arreglo).subscribe(
+      (response) => {
+        console.log('Respuesta del backend:', response);
+      },
+      (error) => {
+        console.error('Error al enviar arreglo:', error);
+      }
+    );
   } 
 
   obtenerPreguntas(nombre: string): any[] {
